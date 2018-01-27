@@ -11,10 +11,6 @@ I had numerous motivations with this repo:
 - Include the necessary Apache server configuration to support what's called stateless entry. This allows users to enter your Backbone app anywhere, not just at the root
 - Make use of a modern-day development toolchain with the usual `package.json` and Webpack to create a single JS bundle
 
-## Status
-
-Everything is working except my Apache config, which I can only get to work locally and not through Docker.
-
 ## Stateless Entry
 
 Stateless entry basically involves serving your `index.html` in front of a web server that redirects requests that don't directly point to your `index.html` to it, preserving the path and query parameters along the way.
