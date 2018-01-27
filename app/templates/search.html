@@ -1,0 +1,10 @@
+<h2>Search</h2>
+<p>You searched for:
+  <ul>
+    <% _.each(Object.keys(params), function(p) { %>
+      <li>
+        <pre><%= p %> : <%= params[p] %></pre>
+      </li>
+      <% })%>
+  </ul>
+</p>

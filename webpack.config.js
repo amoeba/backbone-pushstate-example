@@ -9,7 +9,9 @@ module.exports = {
       //   test: /\.js$/,
       //   include: __dirname + "/app",
       //   loader: "babel-loader?presets[]=es2015"
-      // }
+      // },
+
+      { test: /\.html$/, loader: "underscore-template-loader" }
     ]
   },
   output: {

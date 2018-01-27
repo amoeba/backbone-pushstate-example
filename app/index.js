@@ -1,4 +1,8 @@
 import util from "./util";
+import AppTemplate from "./templates/app.html";
+import UserTemplate from "./templates/user.html";
+import PackageTemplate from "./templates/package.html";
+import SearchTemplate from "./templates/search.html";
 
 $(document).ready(function() {
   var UserModel = Backbone.Model.extend({});
@@ -6,7 +10,7 @@ $(document).ready(function() {
   var SearchModel = Backbone.Model.extend({});
 
   var UserView = Backbone.View.extend({
-    template: _.template("<h2>User '<%- name %>'</h2>"),
+    template: UserTemplate,
     initialize: function() {
       this.listenTo(this.model, "change", this.render);
     },
@@ -17,7 +21,7 @@ $(document).ready(function() {
   });
 
   var PackageView = Backbone.View.extend({
-    template: _.template("<h2>Package '<%- id %>, file: <%- file %>'</h2>"),
+    template: PackageTemplate,
     initialize: function() {
       this.listenTo(this.model, "change", this.render);
     },
@@ -28,9 +32,7 @@ $(document).ready(function() {
   });
 
   var SearchView = Backbone.View.extend({
-    template: _.template(
-      "<h2>Search</h2><p>You searched for:<ul><% _.each(Object.keys(params), function(p) { %><li><pre><%= p %> : <%= params[p] %></pre></li><% })%></ul></p>"
-    ),
+    template: SearchTemplate,
     initialize: function() {
       this.listenTo(this.model, "change", this.render);
     },
@@ -43,9 +45,7 @@ $(document).ready(function() {
   var AppView = Backbone.View.extend({
     tagName: "div",
     id: "app",
-    template: _.template(
-      '<h1>Example App</h1><nav><ul><li><a href="/user/a">user a</a></li><li><a href="/user/b">user b</a></li><li><a href="/package/a">package a</a></li><li><a href="/package/a/b">package a, file b</a></li><li><a href="/search?id=doi:10.123/ABC">search</a></li></ul></nav><main id="content">Click a link above ^^^</main>'
-    ),
+    template: AppTemplate,
     render: function() {
       $(".loading").hide();
       this.$el.html(this.template());
