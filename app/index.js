@@ -77,15 +77,6 @@ $(document).ready(function() {
     Backbone.history.navigate(href, { trigger: true });
   });
 
-  var userModel = new UserModel({
-    name: null
-  });
-
-  var packageModel = new PackageModel({
-    id: null,
-    file: null
-  });
-
   new AppView().render().$el.appendTo("body");
   new AppRouter();
 
