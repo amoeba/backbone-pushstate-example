@@ -61,5 +61,11 @@ docker build -t apache .
 docker run -p 8080:80 apache
 ```
 
+On [Zeit](https://zeit.com) w/ [`now`](https://zeit.co/now):
+
+```sh
+now .
+```
+
 Alternatively, you can run it without stateless entry by running any webserver.
 I recommend [devd](https://github.com/cortesi/devd).

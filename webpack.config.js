@@ -20,7 +20,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       Backbone: "backbone",
-      _: "underscore"
+      _: "lodash"
     }),
     new UglifyJsPlugin({
       sourceMap: true
