@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bouzuya/backbone-pushstate-example.git"
+    "url": "git+https://github.com/amoeba/backbone-pushstate-example.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bouzuya/backbone-pushstate-example/issues"
+    "url": "https://github.com/amoeba/backbone-pushstate-example/issues"
   },
-  "homepage": "https://github.com/bouzuya/backbone-pushstate-example#readme",
+  "homepage": "https://github.com/amoeba/backbone-pushstate-example#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
