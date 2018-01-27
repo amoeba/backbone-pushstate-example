@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   var PackageView = Backbone.View.extend({
-    template: _.template("<h2>package: <%- package %>, file: <%- file %></h2>"),
+    template: _.template("<h2>package: <%- id %>, file: <%- file %></h2>"),
     initialize: function() {
       this.listenTo(this.model, "change", this.render);
     },
@@ -43,7 +43,7 @@ $(document).ready(function() {
     routes: {
       "": "root",
       "user(/:user)": "user",
-      "package(/:package)(/:file)": "package"
+      "package(/:id)(/:file)": "pkg"
     },
     initialize: function() {
       this.content = $("#content");
@@ -58,10 +58,10 @@ $(document).ready(function() {
 
       this.content.html(view.render().el);
     },
-    package: function(package, file) {
+    pkg: function(id, file) {
       var view = new PackageView({
         model: new PackageModel({
-          package: package,
+          id: id,
           file: file
         })
       });
@@ -82,7 +82,7 @@ $(document).ready(function() {
   });
 
   var packageModel = new PackageModel({
-    package: null,
+    id: null,
     file: null
   });
 
