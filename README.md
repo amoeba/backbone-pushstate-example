@@ -4,6 +4,7 @@ This repo contains a very simple Backbone.js app based upon the following resour
 
 - https://github.com/bouzuya/backbone-pushstate-example (for the app)
 - https://gist.github.com/andfinally/8388113 (for the Apache config required to)
+- http://readystate4.com/2012/05/17/nginx-and-apache-rewrite-to-support-html5-pushstate/ (for the final Apache config I used)
 
 I had numerous motivations with this repo:
 
