@@ -18,13 +18,14 @@ Stateless entry basically involves serving your `index.html` in front of a web s
 This is done with using Apache and `mod_rewrite`:
 
 ```text
-<ifModule mod_rewrite.c>
+<IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !index
-    RewriteRule .* index.html [L,QSA]
-</ifModule>
+    RewriteRule . /index.html [L]
+</IfModule>
 ```
 
 ## How to run it
