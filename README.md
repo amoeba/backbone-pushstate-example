@@ -30,9 +30,30 @@ This is done with using Apache and `mod_rewrite`:
 
 ## How to run it
 
-To run with all the features, including stateless entry, you'll need Docker
+To run with all the features, including stateless entry, you can either run it with Node (easy) or Apache (requires Docker):
+
+### With Node
 
 ```sh
+# Install dependencies for the app
+npm install
+
+# Use webpack to build a single application JS bundle
+npm build
+
+# Start a simple Express.js server
+npm run dev
+```
+
+### With Apache (via Docker)
+
+```sh
+# Install dependencies for the app
+npm install
+
+# Use webpack to build a single application JS bundle
+npm build
+
 # Build the Docker image
 docker build -t apache .
 
