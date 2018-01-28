@@ -1,46 +1,13 @@
 import util from "./util";
 import AppTemplate from "./templates/app.html";
-import UserTemplate from "./templates/user.html";
-import PackageTemplate from "./templates/package.html";
-import SearchTemplate from "./templates/search.html";
+import UserView from "./views/user";
+import PackageView from "./views/package";
+import SearchView from "./views/search";
 
 $(document).ready(function() {
   var UserModel = Backbone.Model.extend({});
   var PackageModel = Backbone.Model.extend({});
   var SearchModel = Backbone.Model.extend({});
-
-  var UserView = Backbone.View.extend({
-    template: UserTemplate,
-    initialize: function() {
-      this.listenTo(this.model, "change", this.render);
-    },
-    render: function() {
-      this.$el.html(this.template(this.model.toJSON()));
-      return this;
-    }
-  });
-
-  var PackageView = Backbone.View.extend({
-    template: PackageTemplate,
-    initialize: function() {
-      this.listenTo(this.model, "change", this.render);
-    },
-    render: function() {
-      this.$el.html(this.template(this.model.toJSON()));
-      return this;
-    }
-  });
-
-  var SearchView = Backbone.View.extend({
-    template: SearchTemplate,
-    initialize: function() {
-      this.listenTo(this.model, "change", this.render);
-    },
-    render: function() {
-      this.$el.html(this.template(this.model.toJSON()));
-      return this;
-    }
-  });
 
   var AppView = Backbone.View.extend({
     tagName: "div",
