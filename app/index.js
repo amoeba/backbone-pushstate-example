@@ -3,12 +3,11 @@ import AppTemplate from "./templates/app.html";
 import UserView from "./views/user";
 import PackageView from "./views/package";
 import SearchView from "./views/search";
+import UserModel from "./models/user";
+import PackageModel from "./models/package";
+import SearchModel from "./models/search";
 
 $(document).ready(function() {
-  var UserModel = Backbone.Model.extend({});
-  var PackageModel = Backbone.Model.extend({});
-  var SearchModel = Backbone.Model.extend({});
-
   var AppView = Backbone.View.extend({
     tagName: "div",
     id: "app",
