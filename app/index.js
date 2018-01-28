@@ -8,18 +8,6 @@ import PackageModel from "./models/package";
 import SearchModel from "./models/search";
 
 $(document).ready(function() {
-  var AppView = Backbone.View.extend({
-    tagName: "div",
-    id: "app",
-    template: AppTemplate,
-    render: function() {
-      $(".loading").hide();
-      this.$el.html(this.template());
-
-      return this;
-    }
-  });
-
   var AppRouter = Backbone.Router.extend({
     content: null,
     routes: {
