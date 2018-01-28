@@ -3,6 +3,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: ["./app/index.js"],
+  devtool: "source-map",
   module: {
     loaders: [
       // {
