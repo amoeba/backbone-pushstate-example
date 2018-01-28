@@ -1,5 +1,5 @@
 import util from "./util";
-import AppTemplate from "./templates/app.html";
+import AppView from "./views/app";
 import UserView from "./views/user";
 import PackageView from "./views/package";
 import SearchView from "./views/search";
