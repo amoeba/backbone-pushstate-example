@@ -1,5 +1,7 @@
 import Backbone from "backbone";
 import SearchTemplate from "../templates/search.html";
+import SearchResult from "../models/searchResult";
+import SearchResults from "../collections/searchResults";
 
 var SearchView = Backbone.View.extend({
   template: SearchTemplate,

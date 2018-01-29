@@ -1,4 +1,4 @@
-import util from "./util";
+import util from "./lib/util";
 import AppView from "./views/app";
 import UserView from "./views/user";
 import PackageView from "./views/package";
@@ -6,6 +6,8 @@ import SearchView from "./views/search";
 import UserModel from "./models/user";
 import PackageModel from "./models/package";
 import SearchModel from "./models/search";
+import SearchResults from "./collections/searchResults";
+import SearchResultsView from "./views/searchResults";
 
 $(document).ready(function() {
   var AppRouter = Backbone.Router.extend({
@@ -40,6 +42,15 @@ $(document).ready(function() {
       this.content.html(view.render().el);
     },
     search: function(params) {
+      var results = new SearchResults();
+
+      results.fetch().then(function() {
+        var searchResults = new SearchResultsView({
+          collection: results
+        });
+        searchResults.render();
+      });
+
       var view = new SearchView({
         model: new SearchModel({
           params: util.parseQueryString(params)
