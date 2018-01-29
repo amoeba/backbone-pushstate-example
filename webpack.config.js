@@ -12,7 +12,10 @@ module.exports = {
       //   loader: "babel-loader?presets[]=es2015"
       // },
 
-      { test: /\.html$/, loader: "underscore-template-loader" }
+      {
+        test: /\.html$/,
+        loader: "underscore-template-loader"
+      }
     ]
   },
   output: {
