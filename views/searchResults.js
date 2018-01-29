@@ -1,21 +1,15 @@
 import Backbone from "backbone";
-import SearchResult from "./searchResult";
 import SearchResultsTemplate from "../templates/searchResults.html";
 
 var SearchResultsView = Backbone.View.extend({
-  el: $("#searchResults"),
   template: SearchResultsTemplate,
+  el: "#searchResults",
+  initialize: function() {
+    this.collection.bind("reset", this.render, this);
+  },
   render: function() {
-    this.collection.each(function(result) {
-      console.log("this.collection.each", result);
-      var searchResult = new SearchResult({
-        model: result
-      });
+    $(this.el).html(this.template({ results: this.collection.toJSON() }));
 
-      this.$el.append(searchResult.render().el);
-    }, this);
-
-    this.$el.html(this.template(this.model.toJSON()));
     return this;
   }
 });

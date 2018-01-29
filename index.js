@@ -42,19 +42,23 @@ $(document).ready(function() {
       this.content.html(view.render().el);
     },
     search: function(params) {
-      var results = new SearchResults();
-
-      results.fetch().then(function() {
-        var searchResults = new SearchResultsView({
-          collection: results
-        });
-        searchResults.render();
-      });
+      var parsed_params = util.parseQueryString(params);
 
       var view = new SearchView({
         model: new SearchModel({
-          params: util.parseQueryString(params)
+          params: parsed_params
         })
+      });
+
+      var results = new SearchResults(null, {
+        params: parsed_params
+      });
+
+      results.fetch().then(function(data) {
+        new SearchResultsView({
+          collection: results
+        });
+        results.reset(data.response.docs);
       });
 
       this.content.html(view.render().el);

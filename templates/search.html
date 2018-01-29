@@ -1,11 +1,13 @@
 <h2>Search</h2>
-<p>You searched for:
-  <ul>
-    <% _.each(Object.keys(params), function(p) { %>
-      <li>
-        <pre><%= p %> : <%= params[p] %></pre>
-      </li>
-      <% })%>
-  </ul>
-</p>
-<div id="searchResutls"></div>
+<h3>Parameters</h3>
+<span>These are the decoded query parameters from your current URL, show as param : value pairs and are mostly showing for demonstration purposes:</span>
+<ul>
+  <% _.each(Object.keys(params), function(p) { %>
+    <li>
+      <pre><%= p %> : <%= params[p] %></pre>
+    </li>
+    <% })%>
+</ul>
+<h3>Results</h3>
+<span>Results are from <a href="https://dev.nceas.ucsb.edu/#data">dev.nceas</a> and are derived from the <code>q</code> query parameter in the URL bar. Change it to change your search:</span>
+<ul id="searchResults"></ul>
