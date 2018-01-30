@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node server.js",
-    "start": "webpack-dev-server --progress --inline --color --port 3000",
+    "start": "node server.js",
     "dev": "webpack --watch",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
